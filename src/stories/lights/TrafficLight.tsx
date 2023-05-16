@@ -2,9 +2,15 @@ import React from 'react';
 import Light from './Light';
 
 type Props = {
+  /**
+   * Determines which Light is active
+   */
   variant?: 'green' | 'yellow' | 'red';
 };
 
+/**
+ * Combines the Light components to create a Traffic Light. Only one Light is on at a time.
+ */
 const TrafficLight = ({ variant = 'green' }: Props) => {
   return (
     <div

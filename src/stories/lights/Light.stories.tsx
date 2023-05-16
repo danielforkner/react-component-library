@@ -5,6 +5,7 @@ import Light from './Light';
 const meta: Meta<typeof Light> = {
   component: Light,
   title: 'Light',
+  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: {
@@ -19,16 +20,25 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+/**
+ * Generally means stop
+ */
+export const Red: Story = {
+  args: {
+    variant: 'red',
+  },
+};
 
+/**
+ * Generally means prepare to stop
+ */
 export const Yellow: Story = {
   args: {
     variant: 'yellow',
   },
 };
 
-export const Red: Story = {
-  args: {
-    variant: 'red',
-  },
-};
+/**
+ * Generally means GO
+ */
+export const Default: Story = {};
