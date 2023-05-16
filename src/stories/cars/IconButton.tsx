@@ -1,20 +1,68 @@
-import React, { useState } from 'react';
+import React, { ReactComponentElement, useState } from 'react';
+import './IconButton.css';
 
-const IconButton = () => {
+type Props = {
+  label:
+    | 'Coupes'
+    | 'Crossovers'
+    | 'Diesel Engines'
+    | 'Pickup Trucks'
+    | 'Sport Utilities'
+    | 'Sports Cars'
+    | 'Sedans';
+};
+
+const IconButton = ({ label }: Props) => {
   const [selected, setSelected] = useState(false);
+
+  const handleClick = () => {
+    setSelected(!selected);
+  };
+
   return (
     <button
-      style={{
-        backgroundColor: '#f0f1f2',
-        border: '2px solid #0000',
-        borderRadius: '8px',
-        cursor: 'pointer',
-        height: '88px',
-        width: '100%',
-        padding: 0,
-      }}
+      className={`${selected ? 'selected' : null} vehicle-type-tile`}
+      onClick={handleClick}
     >
-      Crossovers
+      <div
+        className={`selected-check ${
+          selected ? 'selected-check--visible' : null
+        }`}
+      >
+        <div className="check-svg-container">
+          <svg
+            viewBox="0 0 24 24"
+            height="24"
+            width="16"
+            fill="#fff"
+            aria-hidden="true"
+            className="check-svg"
+          >
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+          </svg>
+        </div>
+      </div>
+      <img
+        src={`src/stories/cars/assets/${label.split(' ').join('-')}.svg`}
+        alt={`${label} icon`}
+        style={{
+          width: '78px',
+          height: '43px',
+          aspectRatio: 'auto 78 / 43',
+        }}
+      />
+      <div
+        style={{
+          color: 'rgb(42, 52, 61)',
+          fontSize: '14px',
+          fontWeight: 400,
+          letterSpacing: '0px',
+          lineHeight: '20px',
+        }}
+      >
+        {label}
+      </div>
     </button>
   );
 };

@@ -1,7 +1,9 @@
-const sum = (a: number, b: number): number => {
-  return a + b;
-};
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import IconButton from './IconButton';
 
-test('sum adds', () => {
-  expect(sum(1, 1)).toBe(2);
+test('renders a button with the selected text', () => {
+  render(<IconButton label="Sedans" />);
+
+  expect(screen.getByText('Sedans')).toBeInTheDocument();
 });
