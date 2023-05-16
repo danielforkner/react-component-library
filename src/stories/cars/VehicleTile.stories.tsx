@@ -5,6 +5,7 @@ import VehicleTile from './VehicleTile';
 const meta: Meta<typeof VehicleTile> = {
   component: VehicleTile,
   title: 'Vehicle Tile',
+  tags: ['autodocs'],
   argTypes: {
     label: {
       control: {
@@ -15,9 +16,9 @@ const meta: Meta<typeof VehicleTile> = {
         'Crossovers',
         'Coupes',
         'Crossovers',
-        'Diesel Engines',
-        'Pickup Trucks',
-        'Sport Utilities',
+        'Diesel',
+        'Trucks',
+        'SUVs',
         'Sports Cars',
       ],
     },

@@ -5,13 +5,17 @@ type Props = {
   label:
     | 'Coupes'
     | 'Crossovers'
-    | 'Diesel Engines'
-    | 'Pickup Trucks'
-    | 'Sport Utilities'
+    | 'Diesel'
+    | 'Trucks'
+    | 'SUVs'
     | 'Sports Cars'
     | 'Sedans';
 };
 
+/**
+ *
+ * Design is from https://www.carmax.com/
+ */
 const VehicleTile = ({ label }: Props) => {
   const [selected, setSelected] = useState(false);
 
@@ -45,12 +49,8 @@ const VehicleTile = ({ label }: Props) => {
       </div>
       <img
         src={`src/stories/cars/assets/${label.split(' ').join('-')}.svg`}
+        className="vehicle-type-tile-icon"
         alt={`${label} icon`}
-        style={{
-          width: '78px',
-          height: '43px',
-          aspectRatio: 'auto 78 / 43',
-        }}
       />
       <div className="vehicle-type-tile-title">{label}</div>
     </button>

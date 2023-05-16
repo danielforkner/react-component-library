@@ -4,19 +4,27 @@ import './VehicleCarousel.css';
 
 const VehicleCarousel = () => {
   return (
-    <div className="horizontal-center">
-      <div className="carousel-container">
-        <div className="carousel-container-inner">
-          <div className="item">
-            <VehicleTile label="Coupes" />
-          </div>
-          <div className="item">
-            <VehicleTile label="Crossovers" />
-          </div>
-          <div className="item">
-            <VehicleTile label="Sedans" />
-          </div>
-        </div>
+    <div className="carousel">
+      <div className="item">
+        <VehicleTile label="Coupes" />
+      </div>
+      <div className="item">
+        <VehicleTile label="Crossovers" />
+      </div>
+      <div className="item">
+        <VehicleTile label="Sedans" />
+      </div>
+      <div className="item">
+        <VehicleTile label="Diesel" />
+      </div>
+      <div className="item">
+        <VehicleTile label="Trucks" />
+      </div>
+      <div className="item">
+        <VehicleTile label="SUVs" />
+      </div>
+      <div className="item">
+        <VehicleTile label="Sports Cars" />
       </div>
     </div>
   );
