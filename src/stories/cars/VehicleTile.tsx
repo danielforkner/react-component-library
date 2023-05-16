@@ -1,5 +1,5 @@
-import React, { ReactComponentElement, useState } from 'react';
-import './IconButton.css';
+import React, { useState } from 'react';
+import './VehicleTile.css';
 
 type Props = {
   label:
@@ -12,7 +12,7 @@ type Props = {
     | 'Sedans';
 };
 
-const IconButton = ({ label }: Props) => {
+const VehicleTile = ({ label }: Props) => {
   const [selected, setSelected] = useState(false);
 
   const handleClick = () => {
@@ -52,19 +52,9 @@ const IconButton = ({ label }: Props) => {
           aspectRatio: 'auto 78 / 43',
         }}
       />
-      <div
-        style={{
-          color: 'rgb(42, 52, 61)',
-          fontSize: '14px',
-          fontWeight: 400,
-          letterSpacing: '0px',
-          lineHeight: '20px',
-        }}
-      >
-        {label}
-      </div>
+      <div className="vehicle-type-tile-title">{label}</div>
     </button>
   );
 };
 
-export default IconButton;
+export default VehicleTile;

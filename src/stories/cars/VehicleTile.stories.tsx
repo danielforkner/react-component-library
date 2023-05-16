@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import IconButton from './IconButton';
+import VehicleTile from './VehicleTile';
 
-const meta: Meta<typeof IconButton> = {
-  component: IconButton,
-  title: 'Icon Button',
+const meta: Meta<typeof VehicleTile> = {
+  component: VehicleTile,
+  title: 'Vehicle Tile',
   argTypes: {
     label: {
       control: {
