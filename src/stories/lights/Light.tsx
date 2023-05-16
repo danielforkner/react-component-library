@@ -5,7 +5,7 @@ type Props = {
   /**
    * Determines if the light is on or off
    */
-  disabled?: true | false;
+  disabled?: boolean;
 };
 
 /**
